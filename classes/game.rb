@@ -23,7 +23,7 @@ class Game
   end
 
   def turn
-    @turn_num = Turn.new(@current_player, @turn_count)
+    @turn_num = Turn.new(@current_player)
   end
 
   def switch_player

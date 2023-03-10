@@ -2,10 +2,9 @@
 # I think all I/O here... ?
 
 class Turn 
-  attr_accessor :turn_num, :current_player, :player_answer, :correct_answer
+  attr_accessor :current_player, :player_answer, :correct_answer
 
-  def initialize(current_player, turn_num) # RMV: turn_num for dev only. 
-    @turn_num = turn_num
+  def initialize(current_player)
     @current_player = current_player
     puts "----- NEW TURN -----"
     self.run
