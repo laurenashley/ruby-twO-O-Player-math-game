@@ -7,17 +7,30 @@ class Question
 
   def choose_numbers
     # pick two random numbers between 1-20
-    @num1 = 5
-    @num2 = 2
+    @num1 = rand(20)
+    @num2 = rand(20)
   end
 
   def calculate_answer
-    @correct_answer = @num1 + @num2
+    case @operator_string
+    when @operator_string.include?("plus")
+      @correct_answer = @num1 + @num2
+    when @operator_string.include?("minus")
+      @correct_answer = @num1 - @num2
+    when @operator_string.include?("times")
+      @correct_answer = @num1 * @num2
+    end
   end
 
   def create_question
     self.choose_numbers
+    operator_opts = [
+      "#{@num1} plus #{@num2}",
+      "#{@num1} minus #{@num2}",
+      "#{@num1} times #{@num2}"
+    ]
+    @operator_string = operator_opts[rand(operator_opts.length)]
     self.calculate_answer
-    @question = "What does #{@num1} plus #{@num2} equal?"
+    @question = "What does #{@operator_string} equal?"
   end
 end

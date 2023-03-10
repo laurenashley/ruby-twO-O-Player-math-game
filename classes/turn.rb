@@ -4,7 +4,7 @@
 class Turn 
   attr_accessor :turn_num, :current_player, :player_answer, :correct_answer
 
-  def initialize(current_player, turn_num)
+  def initialize(current_player, turn_num) # RMV: turn_num for dev only. 
     @turn_num = turn_num
     @current_player = current_player
     puts "----- NEW TURN -----"
@@ -14,9 +14,9 @@ class Turn
   def run
     self.ask_question
     @player_answer = gets.chomp.to_i
-    @correct = self.plyr_answer_correct?
+    is_correct = self.player_answer_correct?
 
-    if @correct
+    if is_correct
       puts "Yes! You are correct."
     else
       puts "Seriously? No!"
@@ -30,7 +30,7 @@ class Turn
     puts "#{@current_player.name}: #{@question1.question}"
   end
 
-  def plyr_answer_correct?
+  def player_answer_correct?
     @player_answer == @correct_answer ? true : false
   end
 
