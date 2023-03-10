@@ -1,6 +1,3 @@
-# use gets.chomp for user input
-# I think all I/O here... ?
-
 class Turn 
   attr_accessor :current_player, :player_answer, :correct_answer
 

@@ -1,5 +1,3 @@
-require './classes/player.rb'
-
 class Game
   attr_accessor :player1, :player2, :current_player
 

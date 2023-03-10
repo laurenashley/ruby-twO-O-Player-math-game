@@ -12,12 +12,11 @@ class Question
   end
 
   def calculate_answer
-    case @operator_string
-    when @operator_string.include?("plus")
+    if @operator_string.include?("plus")
       @correct_answer = @num1 + @num2
-    when @operator_string.include?("minus")
+    elsif @operator_string.include?("minus")
       @correct_answer = @num1 - @num2
-    when @operator_string.include?("times")
+    elsif @operator_string.include?("times")
       @correct_answer = @num1 * @num2
     end
   end
